@@ -1,1 +1,2 @@
 Fix signup
+Add functionality to store photos in DB
