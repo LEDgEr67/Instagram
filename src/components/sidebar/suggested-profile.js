@@ -1,19 +1,57 @@
 import PropTypes from "prop-types";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import {
+  updateLoggedInUserFollowing,
+  updateFollowedUserFollowers,
+} from "../../services/firebase";
 
-const SuggestedProfile = ({ userDocId, username, profileId, userId }) => {
-  useEffect(() => {
-    console.log("Rendered", userDocId, userId, username, profileId);
-  }, []);
+const SuggestedProfile = ({
+  profileDocId,
+  username,
+  profileId,
+  userId,
+  loggedInUserDocId,
+}) => {
+  const [followed, setFollowed] = useState(false);
+  async function handleFollowUser() {
+    await updateLoggedInUserFollowing(loggedInUserDocId, profileId, false);
+    await updateFollowedUserFollowers(profileDocId, userId, false);
+    setFollowed(true);
+  }
 
-  return <p>I am suggested {username}</p>;
+  return !followed ? (
+    <div
+      className=" flex flex-row items-center align-items justfiy-between"
+      style={{ justifyContent: "space-between" }}
+    >
+      <div className="flex items-center justify-between">
+        <img
+          className="rounded-full w-8 flex mr-3"
+          src={`/images/avatars/${username}.jpg`}
+          alt=""
+        />
+        <Link to={`p/${username}`}>
+          <p className="font-bold text-sm ">{username}</p>
+        </Link>
+      </div>
+      <button
+        className="text-xs font-bold text-blue-medium"
+        type="button"
+        onClick={handleFollowUser}
+      >
+        Follow
+      </button>
+    </div>
+  ) : null;
 };
 
 SuggestedProfile.propTypes = {
-  userDocId: PropTypes.string.isRequired,
+  profileDocId: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
   profileId: PropTypes.string.isRequired,
   userId: PropTypes.string.isRequired,
+  loggedInUserDocId: PropTypes.string.isRequired,
 };
 
 export default SuggestedProfile;
