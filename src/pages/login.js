@@ -20,7 +20,7 @@ export default function Login() {
       await firebase.auth().signInWithEmailAndPassword(emailAddress, password);
       history.push(ROUTES.DASHBOARD);
     } catch (error) {
-      setEmailAddress("");
+      // setEmailAddress("");
       setPassword("");
       setError(error.message);
     }

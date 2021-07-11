@@ -16,6 +16,5 @@ export default function useUser(userId) {
       getUserObjByUserId();
     }
   }, [user]);
-
   return { user: activeUser };
 }
