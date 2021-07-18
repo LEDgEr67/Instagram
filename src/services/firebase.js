@@ -147,17 +147,34 @@ export async function isUserFollowingProfile(
   const result = await firebase
     .firestore()
     .collection("users")
-    .where("username", "==", loggedInUserUsername)
+    .where("username", "==", loggedInUserUsername) // karl (active logged in user)
     .where("following", "array-contains", profileUserId)
-    .get()
-    .catch((err) => {
-      console.log("Error on isUserFollowingProfile", err);
-    });
+    .get();
 
   const [response = {}] = result.docs.map((item) => ({
-    ...item,
-    doc: item.id,
+    ...item.data(),
+    docId: item.id,
   }));
 
   return response.userId;
+}
+
+export async function toggleFollow(
+  isFollowingProfile,
+  activeUserDocId,
+  profileDocId,
+  profileUserId,
+  followingUserId
+) {
+  await updateLoggedInUserFollowing(
+    activeUserDocId, //Logged In user docid
+    profileUserId, //Followed user id
+    isFollowingProfile //is the user already following?
+  );
+  await updateFollowedUserFollowers(
+    profileDocId, //Logged In User
+    followingUserId, //followed user docid
+    isFollowingProfile //is the user already following?
+  );
+  return null;
 }

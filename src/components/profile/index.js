@@ -18,6 +18,7 @@ export default function Profile({ user }) {
   );
   useEffect(() => {
     async function getProfileInfoAndPhotos() {
+      console.log("getProfileInfoAndPhotos called");
       const photos = await getUserPhotosByUsername(user?.username);
       dispatch({
         profile: user,
@@ -28,7 +29,7 @@ export default function Profile({ user }) {
     if (user.username) {
       getProfileInfoAndPhotos();
     }
-  }, [user, user.username]);
+  }, [user.username]);
 
   return (
     <>

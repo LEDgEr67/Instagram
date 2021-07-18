@@ -13,6 +13,8 @@ export default function Profile() {
 
   useEffect(() => {
     async function checkUserExists() {
+      console.log("checkUserExists called");
+
       const [user] = await getUserByUsername(username);
       if (user.userId) {
         setUser(user);
@@ -21,7 +23,7 @@ export default function Profile() {
       }
     }
     checkUserExists();
-  }, [username, history, user]);
+  }, [username, history]);
 
   return user?.username ? (
     <div className="bg-gray-background">
