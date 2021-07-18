@@ -61,8 +61,6 @@ export default function AddComment({
       });
   };
 
-  useEffect(() => (console.log("name on change", displayName), [displayName]));
-
   return (
     <div className="border-t border-gray-primary flex">
       {/* <Picker /> */}

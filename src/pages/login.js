@@ -11,7 +11,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   const [error, setError] = useState("");
-  const isInvalid = password == "" || emailAddress == "";
+  const isInvalid = password === "" || emailAddress === "";
 
   const handleLogin = async (event) => {
     event.preventDefault();
