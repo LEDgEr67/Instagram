@@ -22,6 +22,8 @@ function App() {
             <p
               style={{
                 position: "absolute",
+                width: "100%",
+                textAlign: "center",
                 justifyContent: "center",
                 alignItems: "center",
               }}
