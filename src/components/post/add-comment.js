@@ -29,7 +29,7 @@
 //       .update({ comments: FieldValue.arrayUnion({ displayName, comment }) });
 //   };
 
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import FirebaseContext from "../../context/firebase";
 import UserContext from "../../context/user";

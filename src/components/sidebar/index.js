@@ -1,7 +1,6 @@
 import useUser from "../../hooks/use-user";
 import User from "./user";
 import Suggestions from "./suggestions";
-import { useState } from "react";
 
 export default function Sidebar() {
   // const {

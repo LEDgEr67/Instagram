@@ -34,10 +34,10 @@ function App() {
               <SignUp />
             </IsUserLoggedIn>
             <Route path={ROUTES.PROFILE} component={Profile} />
+            <Route path={ROUTES.NOT_FOUND} component={NotFound} />
             <ProtectedRoute user={user} path={ROUTES.DASHBOARD}>
               <Dashboard />
             </ProtectedRoute>
-            <Route component={NotFound} />
           </Switch>
         </Suspense>
       </Router>

@@ -29,6 +29,7 @@ export default function Profile({ user }) {
     if (user.username) {
       getProfileInfoAndPhotos();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user.username]);
 
   return (
