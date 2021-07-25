@@ -39,7 +39,7 @@ export default function Profile({ user }) {
         followerCount={followerCount}
         setFollowerCount={dispatch}
       />
-      <Photos photo={photosCollection} />
+      <Photos photos={photosCollection} />
     </>
   );
 }
