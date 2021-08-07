@@ -53,7 +53,7 @@ export default function Header({
   }, [user?.username, profileUserId]);
 
   return (
-    <div className="grid grid-cols-3 gap-4 justify-between mx-auto max-w-screen-lg">
+    <div className="pl-5 pr-5 grid grid-cols-3 gap-4 justify-between mx-auto max-w-screen-lg">
       <div className="container flex justify-center items-center">
         {user?.username && profileUsername ? (
           // eslint-disable-next-line jsx-a11y/img-redundant-alt

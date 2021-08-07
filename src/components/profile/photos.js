@@ -4,8 +4,8 @@ import Skeleton from "react-loading-skeleton";
 export default function Photos({ photos }) {
   console.log(photos);
   return (
-    <div className="h-16 border-t border-gray-primary mt-12 pt-4">
-      <div className="grid grid-cols-3 gap-8 mt-4 mb-12">
+    <div className="pl-5 pr-5 h-16 border-t border-gray-primary mt-12 pt-4">
+      <div className="grid grid-cols-3 gap-2 mt-4 mb-12">
         {!photos ? (
           <>
             <Skeleton count={12} width={320} height={400} />
