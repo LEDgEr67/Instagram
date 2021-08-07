@@ -5,7 +5,7 @@ export default function Photos({ photos }) {
   console.log(photos);
   return (
     <div className="pl-5 pr-5 h-16 border-t border-gray-primary mt-12 pt-4">
-      <div className="grid grid-cols-3 gap-2 mt-4 mb-12">
+      <div className="grid grid-cols-3 gap-1 mt-4 mb-12 sm:gap-5">
         {!photos ? (
           <>
             <Skeleton count={12} width={320} height={400} />
@@ -14,7 +14,7 @@ export default function Photos({ photos }) {
           photos.map((photo) => (
             <div key={photo.docId} className="relative group ">
               <img
-                className="h-80 w-80 object-cover"
+                className="h-40 w-40 object-cover sm:h-80 sm:w-80"
                 src={photo.imageSrc}
                 alt={photo.caption}
               />
