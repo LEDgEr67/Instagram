@@ -8,7 +8,7 @@ export default function Sidebar() {
   // } = useUser();
   const { user } = useUser();
   return (
-    <div className="p-4">
+    <div className="invisible p-4 lg:visible">
       {/* <User /> */}
       {/* <Suggestions /> */}
 
