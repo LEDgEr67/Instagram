@@ -11,19 +11,20 @@ export default function Header() {
   return (
     <header className="fixed z-50 w-screen h-16 bg-white border-b border-gray-primary mb-8 pl-3 pr-3">
       <div className="container mx-auto max-w-screen-lg h-full">
-        <div className="flex justify-between h-full">
+        <div className="flex justify-center sm:justify-between h-full">
           <div className="text-gray-700 text-center flex items-center align-items cursor-pointer">
             <h1 className="flex justify-center w-full">
               <Link to={ROUTES.DASHBOARD}>
                 <img
                   src="/images/logo.png"
                   alt="Instagram"
-                  className="ml-5 mt-2 w-6/12"
+                  className="ml-5 mt-2 "
+                  style={{ "max-width": "8rem" }}
                 />
               </Link>
             </h1>
           </div>
-          <div className="text-gray-700 text-center flex items-center align-items">
+          <div className="fixed bottom-0 ml-0 pl-2 pr-2 left-0 w-screen h-16 bg-white justify-between z-50 sm:relative sm:justify-end sm:w-auto text-gray-700 text-center flex items-center align-items">
             {user ? (
               <>
                 <Link to={ROUTES.DASHBOARD} aria-label="Dashboard">
