@@ -58,7 +58,7 @@ export default function Header({
         {user?.username && profileUsername ? (
           // eslint-disable-next-line jsx-a11y/img-redundant-alt
           <img
-            className="rounded-full h-40 w-40 flex mr-4"
+            className="rounded-full h-30 w-30 flex mr-4 sm:h-40 sm:w-40"
             alt={`${user.username} profile picture`}
             src={`/images/avatars/${profileUsername}.jpg`}
           />
