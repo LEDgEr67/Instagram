@@ -24,7 +24,7 @@ export default function Header() {
               </Link>
             </h1>
           </div>
-          <div className="fixed bottom-0 ml-0 pl-5 pr-5 border-t border-gray-background sm:border-none left-0 w-screen h-16 bg-white justify-between z-50 sm:relative sm:justify-end sm:w-auto text-gray-700 text-center flex items-center align-items">
+          <div className="fixed bottom-0 ml-0 pl-5 pr-5 border-t border-b border-gray-100 border-gray-primary left-0 w-screen h-16 bg-white justify-between z-50 sm:relative sm:justify-end sm:w-auto text-gray-700 text-center flex items-center align-items">
             {user ? (
               <>
                 <Link to={ROUTES.DASHBOARD} aria-label="Dashboard">
