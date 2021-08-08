@@ -9,9 +9,9 @@ export default function NotFound() {
   }, []);
 
   return (
-    <div className="bg-gray-background">
+    <div className="bg-gray-background ">
       <Header />
-      <div className=" mx-auto max-w-screen-lg">
+      <div className=" mx-auto max-w-screen-lg pt-20">
         <p className="text-center text-2xl my-10 font-bold">
           Sorry, this page isn't available.
         </p>

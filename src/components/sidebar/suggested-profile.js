@@ -27,7 +27,12 @@ const SuggestedProfile = ({
     >
       <div className="flex items-center justify-between">
         <img
-          className="rounded-full w-8 flex mr-3"
+          className="rounded-full w-8 flex mr-3 z-0"
+          src={`/images/avatars/default.png`}
+          alt=""
+        />
+        <img
+          className="rounded-full w-8 flex mr-3 z-10 absolute"
           src={`/images/avatars/${username}.jpg`}
           alt=""
         />
