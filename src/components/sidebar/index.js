@@ -1,6 +1,7 @@
 import useUser from "../../hooks/use-user";
 import User from "./user";
 import Suggestions from "./suggestions";
+import Footer from "../footer";
 
 export default function Sidebar() {
   // const {
@@ -8,7 +9,7 @@ export default function Sidebar() {
   // } = useUser();
   const { user } = useUser();
   return (
-    <div className="invisible p-4 fixed left-2/3 lg:visible">
+    <div className="invisible p-4 fixed left-2/3 lg:visible h-10">
       {/* <User /> */}
       {/* <Suggestions /> */}
 
@@ -18,6 +19,9 @@ export default function Sidebar() {
         following={user?.following}
         loggedInUserDocId={user?.docId}
       />
+      <div className="pt-10">
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { useHistory, Link } from "react-router-dom";
 import FirebaseContext from "../context/firebase";
 import { useState, useEffect, useContext } from "react";
 import * as ROUTES from "../constants/routes";
+import Footer from "../components/footer";
 
 export default function Login() {
   const history = useHistory();
@@ -31,15 +32,15 @@ export default function Login() {
   }, []);
 
   return (
-    <div className="container flex mx-auto max-w-screen-md items-center h-screen">
-      <div className="flex w-3/5">
+    <div className="container flex relative mx-auto max-w-screen-md justify-center items-center h-screen">
+      <div className="flex w-full sm:w-3/5 absolute text-center justify-center invisible sm:visible sm:relative">
         <img
           src="/images/iphone-with-profile.jpg"
           alt="IPhone with profile"
           //   className="max-w-full"
         />
       </div>
-      <div className="flex flex-col w-2/5">
+      <div className="flex justify-center items-center flex-col w-3/4  sm:w-2/5">
         <div className="flex flex-col items-center bg-white p-4 border border-gray-primary mb-4 rounded">
           <h1 className="flex justify-center w-full">
             <img
@@ -85,6 +86,9 @@ export default function Login() {
             </Link>
           </p>
         </div>
+      </div>
+      <div className="fixed bottom-10 w-screen">
+        <Footer />
       </div>
     </div>
   );

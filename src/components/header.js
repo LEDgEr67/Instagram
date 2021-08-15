@@ -3,27 +3,34 @@ import { useContext } from "react";
 import FirebaseContext from "../context/firebase";
 import UserContext from "../context/user";
 import * as ROUTES from "../constants/routes";
+import ProfileImage from "../helpers/profile-image";
 
 export default function Header(props) {
   const { firebase } = useContext(FirebaseContext);
   const { user } = useContext(UserContext);
-  console.log(`/images/avatars/${user.displayName}.jpg`);
+  console.log("thoufic", user.displayName);
   return (
     <header className="fixed z-50 w-screen h-16 bg-white border-b border-gray-primary mb-8 pl-3 pr-3">
       <div className="container mx-auto max-w-screen-lg h-full">
         <div className="flex justify-center sm:justify-between h-full">
-          <div className="text-gray-700 text-center flex items-center align-items cursor-pointer">
-            <h1 className="flex justify-center w-full">
-              <Link to={ROUTES.DASHBOARD}>
-                <img
-                  src="/images/logo.png"
-                  alt="Instagram"
-                  className="ml-5 mt-2 "
-                  style={{ "max-width": "8rem" }}
-                />
-              </Link>
-            </h1>
-          </div>
+          {props.profile ? (
+            <div className=" fixed flex justify-center mt-4 middle font-bold text-2xl align-center z-100 w-screen h-16 visible text-center sm:invisible text-black">
+              <p>{props.username}</p>
+            </div>
+          ) : (
+            <div className="text-gray-700 text-center flex items-center align-items cursor-pointer">
+              <h1 className="flex justify-center w-full">
+                <Link to={ROUTES.DASHBOARD}>
+                  <img
+                    src="/images/logo.png"
+                    alt="Instagram"
+                    className="ml-5 mt-2 "
+                    style={{ "max-width": "8rem" }}
+                  />
+                </Link>
+              </h1>
+            </div>
+          )}
           <div className="fixed bottom-0 ml-0 pl-5 pr-5 border-t border-b border-gray-100 border-gray-primary left-0 w-screen h-16 bg-white justify-between z-50 sm:relative sm:justify-end sm:w-auto text-gray-700 text-center flex items-center align-items">
             {user ? (
               <>
@@ -100,20 +107,10 @@ export default function Header(props) {
                 </button>
                 <div className="flex items-center cursor-pointer">
                   <Link to={`/p/${user.displayName}`}>
-                    {/* <img
-                      className="rounded-full h-6 w-6 border flex z-0 "
-                      src={`/images/avatars/default.png`}
-                      alt=""
-                    /> */}
-                    <img
+                    <ProfileImage
+                      fileName={user.displayName}
                       className="rounded-full h-6 w-6 flex border z-10 bottom-4 "
-                      src={
-                        `/images/avatars/${user.displayName}.jpg` == null
-                          ? `/images/avatars/default.png`
-                          : `/images/avatars/${user.displayName}.jpg`
-                      }
-                      alt={`${user.displayName}`}
-                    ></img>
+                    />
                   </Link>
                 </div>
               </>

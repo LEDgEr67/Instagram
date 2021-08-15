@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Skeleton from "react-loading-skeleton";
 import useUser from "../../hooks/use-user";
 import { isUserFollowingProfile, toggleFollow } from "../../services/firebase";
+import ProfileImage from "../../helpers/profile-image";
 
 export default function Header({
   photosCount,
@@ -56,11 +57,9 @@ export default function Header({
     <div className="pl-5 pr-5 grid grid-cols-3 gap-4 justify-between mx-auto max-w-screen-lg">
       <div className="container flex justify-center items-center">
         {user?.username && profileUsername ? (
-          // eslint-disable-next-line jsx-a11y/img-redundant-alt
-          <img
+          <ProfileImage
+            fileName={user.username}
             className="rounded-full h-30 w-30 flex mr-4 sm:h-40 sm:w-40"
-            alt={`${user.username} profile picture`}
-            src={`/images/avatars/${profileUsername}.jpg`}
           />
         ) : (
           <Skeleton

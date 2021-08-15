@@ -27,8 +27,8 @@ export default function Profile() {
 
   return user?.username ? (
     <div className="bg-gray-background">
-      <Header />
-      <div className="pt-20 mx-auto max-w-screen-lg">
+      <Header username={user.username} profile={true} />
+      <div className="pt-20 min-h-full mx-auto max-w-screen-lg">
         <UserProfile user={user} />
       </div>
     </div>

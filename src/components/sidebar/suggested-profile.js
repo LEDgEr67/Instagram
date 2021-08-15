@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import ProfileImage from "../../helpers/profile-image";
 import {
   updateLoggedInUserFollowing,
   updateFollowedUserFollowers,
@@ -26,7 +27,11 @@ const SuggestedProfile = ({
       style={{ justifyContent: "space-between" }}
     >
       <div className="flex items-center justify-between">
-        <img
+        <ProfileImage
+          fileName={username}
+          className="rounded-full w-8 flex mr-3 z-0"
+        />
+        {/* <img
           className="rounded-full w-8 flex mr-3 z-0"
           src={`/images/avatars/default.png`}
           alt=""
@@ -35,7 +40,7 @@ const SuggestedProfile = ({
           className="rounded-full w-8 flex mr-3 z-10 absolute"
           src={`/images/avatars/${username}.jpg`}
           alt=""
-        />
+        /> */}
         <Link to={`p/${username}`}>
           <p className="font-bold text-sm ">{username}</p>
         </Link>
