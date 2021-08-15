@@ -4,16 +4,16 @@ import FirebaseContext from "../context/firebase";
 import UserContext from "../context/user";
 import * as ROUTES from "../constants/routes";
 import ProfileImage from "../helpers/profile-image";
+import { isMobile } from "react-device-detect";
 
 export default function Header(props) {
   const { firebase } = useContext(FirebaseContext);
   const { user } = useContext(UserContext);
-  console.log("thoufic", user.displayName);
   return (
     <header className="fixed z-50 w-screen h-16 bg-white border-b border-gray-primary mb-8 pl-3 pr-3">
       <div className="container mx-auto max-w-screen-lg h-full">
         <div className="flex justify-center sm:justify-between h-full">
-          {props.profile ? (
+          {props.profile && isMobile ? (
             <div className=" fixed flex justify-center mt-4 middle font-bold text-2xl align-center z-100 w-screen h-16 visible text-center sm:invisible text-black">
               <p>{props.username}</p>
             </div>
