@@ -2,28 +2,25 @@
 import fs from "fs";
 
 export default function ProfileImage({ fileName, className }) {
-  var path = `/images/avatars/${fileName}.jpg`;
-  // const fs = require("fs");
-  const fileExistsSync = (file) => {
-    try {
-      if (fs.existsSync(path)) {
-        // Do something
-        console.log("Thoufic present");
-        return true;
-      }
-    } catch (err) {
-      console.log("Thoufic error", fs, err);
+  const path = `/images/avatars/${fileName}.jpg`;
+  // try {
+  //   if (path.exists()) {
+  //     console.log("thoufic it is there");
+  //   } else {
+  //     console.log("thoufic it is not there");
+  //   }
+  // } catch (err) {
+  //   console.log("thoufic", err);
+  // }
 
-      return false;
+  try {
+    if (fs.existsSync(path)) {
+      //file exists
+      console.log("thoufic it is there");
     }
-  };
-  fileExistsSync(path);
-
-  // const checkexists = async (path) => {
-  //   return await pathExists(path);
-  // };
-  // console.log("thoufic", checkexists(path));
-
+  } catch (err) {
+    console.error("thoufic", err);
+  }
   return (
     <>
       {/* isFilePresent ? (

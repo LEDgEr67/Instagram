@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Header from "../components/header";
 import * as ROUTES from "../constants/routes";
+import Footer from "../components/footer";
 export default function NotFound() {
   const history = useHistory();
   useEffect(() => {
@@ -30,6 +31,9 @@ export default function NotFound() {
             </button>
           </span>
         </p>
+      </div>
+      <div className="fixed bottom-4 w-screen">
+        <Footer />
       </div>
     </div>
   );

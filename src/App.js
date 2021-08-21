@@ -19,17 +19,28 @@ function App() {
       <Router>
         <Suspense
           fallback={
-            <p
+            <div
               style={{
-                position: "absolute",
+                background: "white",
+                height: "100vh",
                 width: "100%",
-                textAlign: "center",
-                justifyContent: "center",
-                alignItems: "center",
               }}
             >
-              Loading..
-            </p>
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                }}
+              >
+                <img
+                  // className={className}
+                  src="/gif/loader.gif"
+                  alt={`default `}
+                ></img>
+              </div>
+            </div>
           }
         >
           <Switch>
