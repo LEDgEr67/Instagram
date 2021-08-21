@@ -1,6 +1,6 @@
 export default function StoryPreview(props) {
   return (
-    <div className="flex flex-col justify ml-4 mt-2 min-w-14">
+    <div className="flex flex-col justify ml-4 mt-2 w-14 ">
       <div className="relative rounded-full">
         <img className=" w-14 h-14" src="images/story-outline.png" alt="" />
         <img

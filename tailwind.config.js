@@ -29,4 +29,8 @@ module.exports = {
   variants: {
     display: ["group-hover "],
   },
+  plugins: [
+    require("tailwind-scrollbar-hide"),
+    // ...
+  ],
 };
