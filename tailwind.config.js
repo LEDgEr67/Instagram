@@ -4,6 +4,11 @@ module.exports = {
   },
 
   theme: {
+    extend: {
+      zIndex: {
+        "-10": "-10",
+      },
+    },
     fill: (theme) => ({
       red: theme("colors.red.primary"),
     }),

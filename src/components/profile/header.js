@@ -76,7 +76,25 @@ export default function Header({
             <Skeleton count={1} width={300} height={24} />
           ) : (
             <>
-              <p className="text-2xl mr-4">{profileUsername}</p>
+              <p className="text-2xl mr-4 flex">
+                {profileUsername}
+                {(profileUsername === "thoufic") |
+                (profileUsername === "kama") ? (
+                  <span
+                    style={{
+                      position: "relative",
+                      backgroundImage: "url(/instaicons.png)",
+                      backgroundPosition: "0 -369px",
+                      height: "18px",
+                      width: "18px",
+                      left: "5px",
+                      top: "5px",
+                    }}
+                  ></span>
+                ) : (
+                  <></>
+                )}
+              </p>
               {activeBtnFollow && (
                 <button
                   className="bg-blue-medium font-bold text-sm rounded text-white w-20 h-8"

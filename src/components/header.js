@@ -1,14 +1,21 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import FirebaseContext from "../context/firebase";
+import { useContext, useState } from "react";
+// import FirebaseContext from "../context/firebase";
 import UserContext from "../context/user";
 import * as ROUTES from "../constants/routes";
 import ProfileImage from "../helpers/profile-image";
 import { isMobile } from "react-device-detect";
+import HeaderOptions from "./header-options";
 
 export default function Header(props) {
-  const { firebase } = useContext(FirebaseContext);
+  const [showOptions, setShowOptions] = useState(false);
+  // const { firebase } = useContext(FirebaseContext);
   const { user } = useContext(UserContext);
+
+  const handleOptions = () => {
+    setShowOptions((showOptions) => !showOptions);
+  };
+
   return (
     <header className="fixed z-50 w-screen h-16 bg-white border-b border-gray-primary mb-8 pl-3 pr-3">
       <div className="container mx-auto max-w-screen-lg h-full">
@@ -80,7 +87,7 @@ export default function Header(props) {
                 >
                   <path d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path>
                 </svg>
-                <button
+                {/* <button
                   type="button"
                   title="Sign Out"
                   onClick={() => firebase.auth().signOut()}
@@ -104,14 +111,23 @@ export default function Header(props) {
                       d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
                     />
                   </svg>
-                </button>
-                <div className="flex items-center cursor-pointer">
-                  <Link to={`/p/${user.displayName}`}>
+                </button> */}
+                <div className="relative">
+                  <div
+                    className="flex items-center cursor-pointer"
+                    onClick={handleOptions}
+                  >
+                    {/* <Link to={`/p/${user.displayName}`}> */}
                     <ProfileImage
                       fileName={user.displayName}
                       className="rounded-full h-6 w-6 flex border z-10 bottom-4 "
                     />
-                  </Link>
+                    {/* </Link> */}
+                  </div>
+                  <HeaderOptions
+                    showOptions={showOptions}
+                    handleOptions={handleOptions}
+                  />
                 </div>
               </>
             ) : (
