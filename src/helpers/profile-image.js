@@ -13,14 +13,14 @@ export default function ProfileImage({ fileName, className }) {
   //   console.log("thoufic", err);
   // }
 
-  try {
-    if (fs.existsSync(path)) {
-      //file exists
-      console.log("thoufic it is there");
-    }
-  } catch (err) {
-    console.error("thoufic", err);
-  }
+  // try {
+  //   if (fs.existsSync(path)) {
+  //     //file exists
+  //     console.log("thoufic it is there");
+  //   }
+  // } catch (err) {
+  //   console.error("thoufic", err);
+  // }
   return (
     <>
       {/* isFilePresent ? (

@@ -17,7 +17,7 @@ export default function Header(props) {
   };
 
   return (
-    <header className="fixed z-50 w-screen h-16 bg-white border-b border-gray-primary mb-8 pl-3 pr-3">
+    <header className="fixed z-50 w-screen h-10 sm:h-16 bg-white border-b border-gray-primary mb-8 pl-3 pr-3">
       <div className="container mx-auto max-w-screen-lg h-full">
         <div className="flex justify-center sm:justify-between h-full">
           {props.profile && isMobile ? (
@@ -42,7 +42,7 @@ export default function Header(props) {
             <div className="flex max-w-60 h-full items-center flex-0">
               <input
                 type="text"
-                className="w-52 h-6 bg-gray-background border border-gray-primary rounded text-center text-sm"
+                className="w-52 h-6 bg-gray-background border border-gray-primary rounded-sm text-center text-sm"
                 placeholder="Search"
               ></input>
               <span
@@ -60,7 +60,7 @@ export default function Header(props) {
               ></span>
             </div>
           )}
-          <div className="fixed bottom-0 ml-0 pl-5 pr-5 border-t border-b border-gray-100 border-gray-primary left-0 w-screen h-16 bg-white justify-between z-50 sm:relative sm:justify-end sm:w-auto text-gray-700 text-center flex items-center align-items">
+          <div className="fixed bottom-0 ml-0 pl-5 pr-5 border-t border-b border-gray-100 border-gray-primary left-0 w-screen h-10 sm:h-16 bg-white justify-between z-50 sm:relative sm:justify-end sm:w-auto text-gray-700 text-center flex items-center align-items">
             {user ? (
               <>
                 <Link to={ROUTES.DASHBOARD} aria-label="Dashboard">
