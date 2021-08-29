@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Header({ username }) {
   return (
-    <div className="flex border-b border-gray-primary h-4 p-4 py-8 justify-between">
+    <div className="flex border-b relative border-gray-primary h-auto p-4 justify-between">
       <div className="flex items-center">
         <Link to={`/p/${username}`} className="flex items-center align-middle">
           <img
@@ -13,10 +13,10 @@ export default function Header({ username }) {
           <p className="font-bold">{username}</p>
         </Link>
       </div>
-      <div className="align-middle ">
+      <div className="">
         <svg
           aria-label="More options"
-          className="pt-1"
+          className="pt-1 top-1"
           fill="#262626"
           height="24"
           role="img"
