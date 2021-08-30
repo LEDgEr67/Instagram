@@ -20,8 +20,8 @@ export default function Header(props) {
     <header className="fixed z-50 w-screen h-10 sm:h-16 bg-white border-b border-gray-primary mb-8 pl-3 pr-3">
       <div className="container mx-auto max-w-screen-lg h-full">
         <div className="flex justify-center sm:justify-between h-full">
-          {props.profile && isMobile ? (
-            <div className=" fixed flex justify-center mt-4 middle font-bold text-2xl align-center z-100 w-screen h-16 visible text-center sm:invisible text-black">
+          {props.profile && !isMobile ? (
+            <div className=" fixed flex justify-center mt-auto middle font-bold text-2xl align-center z-100 w-screen h-16 visible text-center sm:invisible text-black">
               <p>{props.username}</p>
             </div>
           ) : (
