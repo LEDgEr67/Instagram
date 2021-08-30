@@ -7,7 +7,7 @@ export default function Timeline() {
   const { photos } = usePhotos();
   console.log("photos", photos);
   return (
-    <div className="container ml-0 col-span-2 ">
+    <div className="container m-auto col-span-2 ">
       {!photos ? (
         <>
           <Skeleton count={4} className="mb-5 w-screen h-80 sm:w-40 sm:h-80" />
