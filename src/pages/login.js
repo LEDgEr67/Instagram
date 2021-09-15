@@ -97,7 +97,7 @@ export default function Login() {
                 interactive
                 title="Sign Up is Blocked Temporarily due to some technical issue, Feel free to use the above credential to Login! Thank you for understanding!"
               >
-                <span className="font-bold text-blue-medium  cursor-pointer">
+                <span className="font-bold text-blue-medium  cursor-not-allowed">
                   SignUp
                 </span>
               </Tooltip>
