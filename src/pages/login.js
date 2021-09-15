@@ -3,6 +3,8 @@ import FirebaseContext from "../context/firebase";
 import { useState, useEffect, useContext } from "react";
 import * as ROUTES from "../constants/routes";
 import Footer from "../components/footer";
+import Tooltip from "@material-ui/core/Tooltip";
+// import ReactTooltip from "react-tooltip";
 
 export default function Login() {
   const history = useHistory();
@@ -76,18 +78,31 @@ export default function Login() {
                 disabled={isInvalid}
                 type="submit"
                 className={`bg-blue-medium text-white w-full rounded h-8 font-bold
-            ${isInvalid && "opacity-50"}`}
+            ${isInvalid && "opacity-50 cursor-not-allowed"}`}
               >
                 Log In
               </button>
             </form>
           </div>
           <div className="flex justify-center items-center flex-col w-full bg-white p-4 mt-4 border border-gray-primary rounded">
-            <p className="text-sm">
-              Don't have an account ? {""}
-              <Link to={ROUTES.SIGN_UP} className="font-bold text-blue-medium">
-                SignUp
-              </Link>
+            <p className="text-sm text-center">
+              Email Address: <span>thoufic@gmail.com</span> Password: test123{" "}
+              <br />
+              <br />
+              <div className="border-b border-gray-primary" />
+              <br />
+              Don't have an account ? {""}{" "}
+              <Tooltip
+                arrow
+                interactive
+                title="Sign Up is Blocked Temporarily due to some technical issue, Feel free to use the above credential to Login! Thank you for understanding!"
+              >
+                <span className="font-bold text-blue-medium  cursor-pointer">
+                  SignUp
+                </span>
+              </Tooltip>
+              {/* <Link to={ROUTES.SIGN_UP} className="font-bold text-blue-medium"> */}
+              {/* </Link> */}
             </p>
           </div>
         </div>
