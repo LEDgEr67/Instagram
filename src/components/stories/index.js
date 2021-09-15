@@ -6,38 +6,38 @@ export default function Stories(props) {
       <div className="block pr-2">
         <ul className="absolute flex pt-2 pb-2 pr-2 ">
           <li>
-            <StoryPreview username="none" />
+            <StoryPreview username="remo" />
           </li>
 
           <li>
-            <StoryPreview username="none" />
+            <StoryPreview username="hemanth" />
           </li>
           <li>
-            <StoryPreview username="none" />
+            <StoryPreview username="nadal" />
           </li>
           <li>
-            <StoryPreview username="none" />
+            <StoryPreview username="musk" />
           </li>
           <li>
-            <StoryPreview username="none" />
+            <StoryPreview username="bezoz" />
           </li>
           <li>
-            <StoryPreview username="none" />
+            <StoryPreview username="zuckerberg" />
           </li>
           <li>
-            <StoryPreview username="none" />
+            <StoryPreview username="thoufic" />
           </li>
           <li>
-            <StoryPreview username="none" />
+            <StoryPreview username="kama" />
           </li>
           <li>
-            <StoryPreview username="none" />
+            <StoryPreview username="taylor " />
           </li>
           <li>
-            <StoryPreview username="none" />
+            <StoryPreview username="katherine" />
           </li>
           <li>
-            <StoryPreview username="none" />
+            <StoryPreview username="chan" />
           </li>
         </ul>
       </div>
